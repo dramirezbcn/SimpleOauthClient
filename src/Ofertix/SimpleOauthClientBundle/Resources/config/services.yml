@@ -1,0 +1,4 @@
+services:
+    simple_oauth_client.get_url:
+        class: Component\OauthClient\Application\GetAction
+        arguments: ['@simple_oauth_client.oauth_client_repository', '@simple_oauth_client.oauth_client_adapter']

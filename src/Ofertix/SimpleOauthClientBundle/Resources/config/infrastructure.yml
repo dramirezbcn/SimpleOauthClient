@@ -1,0 +1,11 @@
+services:
+    simple_oauth_client.oauth_client_adapter:
+        class: Component\OauthClient\Domain\Model\ClientAdapter
+        arguments: ['@simple_oauth_client.oauth_client']
+
+    simple_oauth_client.oauth_client:
+        class: Component\OauthClient\Domain\Model\OauthClient
+        factory: [Component\OauthClient\Domain\Model\OauthClientFactory, create]
+        arguments: ['%simple_oauth_client%']
+
+

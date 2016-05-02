@@ -1,0 +1,3 @@
+services:
+    simple_oauth_client.oauth_client_repository:
+        class: Ofertix\SimpleOauthClientBundle\Repository\OauthClientRepository
