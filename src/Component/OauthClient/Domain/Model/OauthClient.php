@@ -1,7 +1,7 @@
 <?php
-namespace Component\OauthClient\Domain\Model;
+namespace SimpleOauthClient\Component\OauthClient\Domain\Model;
 
-use Component\OauthClient\Domain\Infrastructure\OauthClientInterface;
+use SimpleOauthClient\Component\OauthClient\Domain\Infrastructure\OauthClientInterface;
 use Guzzle\Common\Collection;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;

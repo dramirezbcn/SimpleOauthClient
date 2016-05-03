@@ -1,9 +1,9 @@
 <?php
-namespace Component\OauthClient\Application;
+namespace SimpleOauthClient\Component\OauthClient\Application;
 
-use Component\OauthClient\Application\Request\UrlRequest;
-use Component\OauthClient\Domain\Infrastructure\OauthClientInterface;
-use Component\OauthClient\Domain\Infrastructure\OauthClientRepositoryInterface;
+use SimpleOauthClient\Component\OauthClient\Application\Request\UrlRequest;
+use SimpleOauthClient\Component\OauthClient\Domain\Infrastructure\OauthClientInterface;
+use SimpleOauthClient\Component\OauthClient\Domain\Infrastructure\OauthClientRepositoryInterface;
 
 class GetAction
 {

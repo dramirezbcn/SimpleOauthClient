@@ -1,6 +1,6 @@
 <?php
 
-namespace Component\OauthClient\Domain\Model;
+namespace SimpleOauthClient\Component\OauthClient\Domain\Model;
 
 class AccessToken
 {
