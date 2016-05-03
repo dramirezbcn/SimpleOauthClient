@@ -1,5 +1,5 @@
 <?php
-namespace Component\OauthClient\Application\Request;
+namespace SimpleOauthClient\Component\OauthClient\Application\Request;
 
 class UrlRequest
 {

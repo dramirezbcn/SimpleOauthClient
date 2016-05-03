@@ -1,7 +1,7 @@
 <?php
-namespace Ofertix\SimpleOauthClientBundle\Repository;
+namespace SimpleOauthClient\Component\OauthClient\Domain\Model;
 
-use Component\OauthClient\Domain\Infrastructure\OauthClientRepositoryInterface;
+use SimpleOauthClient\Component\OauthClient\Domain\Infrastructure\OauthClientRepositoryInterface;
 
 class OauthClientRepository implements OauthClientRepositoryInterface
 {

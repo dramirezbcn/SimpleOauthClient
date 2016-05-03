@@ -1,5 +1,5 @@
 <?php
-namespace Component\OauthClient\Domain\Infrastructure;
+namespace SimpleOauthClient\Component\OauthClient\Domain\Infrastructure;
 
 interface OauthClientRepositoryInterface
 {

@@ -1,9 +1,9 @@
 <?php
-namespace Component\OauthClient\Application;
+namespace SimpleOauthClient\Component\OauthClient\Application;
 
-use Component\OauthClient\Application\Request\UrlRequest;
-use Component\OauthClient\Domain\Infrastructure\OauthClientInterface;
-use Component\OauthClient\Domain\Infrastructure\OauthClientRepositoryInterface;
+use SimpleOauthClient\Component\OauthClient\Application\Request\UrlRequest;
+use SimpleOauthClient\Component\OauthClient\Domain\Infrastructure\OauthClientInterface;
+use SimpleOauthClient\Component\OauthClient\Domain\Infrastructure\OauthClientRepositoryInterface;
 
 class GetAction
 {
@@ -15,7 +15,7 @@ class GetAction
 
 
     public function __construct(
-        OauthClientRepositoryInterface $repository,
+        OauthClientRepositoryInterface $repository = null,
         OauthClientInterface $client
     ) {
         $this->repository = $repository;
@@ -28,12 +28,14 @@ class GetAction
      */
     public function execute(UrlRequest $oauthClientRequest)
     {
-        $cachedToken = $this->repository->getToken();
+        if (!is_null($this->repository)) {
+            $cachedToken = $this->repository->getToken();
 
-        if ($cachedToken) {
-            $this->client->setToken($cachedToken);
-        } else {
-            $this->repository->saveToken($this->client->getToken());
+            if ($cachedToken) {
+                $this->client->setToken($cachedToken);
+            } else {
+                $this->repository->saveToken($this->client->getToken());
+            }
         }
 
         $response = $this->client->get(
