@@ -1,7 +1,9 @@
 <?php
 namespace SimpleOauthClient\Component\OauthClient\Application;
 
+use Psr\Http\Message\ResponseInterface;
 use SimpleOauthClient\Component\OauthClient\Application\Request\UrlRequest;
+use SimpleOauthClient\Component\OauthClient\Application\Request\UrlResponse;
 use SimpleOauthClient\Component\OauthClient\Domain\Infrastructure\OauthClientInterface;
 use SimpleOauthClient\Component\OauthClient\Domain\Infrastructure\OauthClientRepositoryInterface;
 
@@ -24,7 +26,7 @@ class GetAction
 
     /**
      * @param UrlRequest $oauthClientRequest
-     * @return bool
+     * @return mixed|ResponseInterface
      */
     public function execute(UrlRequest $oauthClientRequest)
     {
@@ -38,14 +40,16 @@ class GetAction
             }
         }
 
-        $response = $this->client->get(
+        $result = $this->client->get(
             $oauthClientRequest->method(),
             $oauthClientRequest->url(),
             $oauthClientRequest->params()
         );
-
-        $result = json_decode($response->getBody(), true);
-
-        return $result;
+        
+        return new UrlResponse(
+            $result->getStatusCode(), 
+            $result->getHeaders(), 
+            $result->getBody()
+        );
     }
 }
