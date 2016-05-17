@@ -1,5 +1,5 @@
 <?php
-namespace SimpleOauthClient\Component\OauthClient\Application\Request;
+namespace SimpleOauthClient\Component\OauthClient\Application\Response;
 
 use Psr\Http\Message\StreamInterface;
 
